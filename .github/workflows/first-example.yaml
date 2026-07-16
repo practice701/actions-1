@@ -1,19 +1,20 @@
-name: CI
-
+name: workflow-demo
 on:
-  push:  
+  push
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
-      with:
-        python-version: 3.11
-      
-    - name: Install dependencies
-      uses: actions/checkout@v7
-      run: |
-        pip install -r requirements.txt
+      - name: checkout code
+        uses: actions/checkout@v7
+
+      - name: create a text file
+        run: echo "Hello, world!" > hello.txt
+
+      - name: archive text file
+        - uses: actions/upload-artifact@v7
+          with:
+            name: gyan-hello-artifact
+            path: hello.txt
