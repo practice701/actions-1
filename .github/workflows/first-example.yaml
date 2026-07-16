@@ -15,6 +15,6 @@ jobs:
 
       - name: archive text file
         uses: actions/upload-artifact@v7
-          with:
-            name: gyan-hello-artifact
-            path: hello.txt
+        with:
+          name: gyan-hello-artifact
+          path: hello.txt
